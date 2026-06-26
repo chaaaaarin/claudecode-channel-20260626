@@ -104,6 +104,14 @@
   .loop-card .lk{font-family:var(--head);font-weight:900;font-size:14px;color:var(--brand-deep);margin-bottom:5px;}
   .loop-card p{font-size:13px;color:var(--ink-mid);line-height:1.5;}
   .row2{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+  .ptitle{display:inline-block;font-family:var(--head);font-weight:900;font-size:11px;letter-spacing:.6px;color:var(--accent);background:var(--accent-soft);border:1px solid var(--brand-line);border-radius:999px;padding:3px 11px;margin-bottom:8px;}
+  .prompt-box{background:var(--ink);border-radius:11px;padding:16px 20px;margin-bottom:14px;}
+  .prompt-box pre{font-family:ui-monospace,Menlo,'Courier New',monospace;font-size:12.5px;color:#ECECEA;line-height:1.7;white-space:pre-wrap;word-break:break-word;margin:0;}
+  .prompt-box pre .cm{color:var(--ink-sub);}
+  .tpl-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:13px;}
+  .tpl-card{background:var(--bg);border:1.5px solid var(--line);border-left:4px solid var(--brand);border-radius:12px;padding:15px 16px;}
+  .tpl-card .tk{font-family:var(--head);font-weight:900;font-size:13px;color:var(--brand-deep);margin-bottom:8px;}
+  .tpl-card pre{font-family:ui-monospace,Menlo,'Courier New',monospace;font-size:11px;color:var(--ink-mid);line-height:1.65;white-space:pre-wrap;word-break:break-word;margin:0;}
 </style>
 </head>
 <body>
@@ -121,7 +129,7 @@
 
   <div class="tocbar">
     <a href="#s1">① とは／全体像</a><a href="#s2">② なぜ今</a><a href="#s3">③ 10の機能</a><a href="#s4">④ 3つのループ例</a>
-    <a href="#s5">⑤ 役割分担</a><a href="#s6">⑥ 始め方</a><a href="#s7">⑦ ループ条件</a><a href="#s8">⑧ 注意・まとめ</a>
+    <a href="#s5">⑤ 役割分担</a><a href="#s6">⑥ 始め方</a><a href="#s7">⑦ ループ条件</a><a href="#s8">⑧ 注意・まとめ</a><a href="#s9">⑨ プロンプト集</a>
   </div>
 
   <!-- TL;DR -->
@@ -311,6 +319,109 @@
         <li>⚠️ 未確認：推測・体感ベースの情報</li>
         <li>数値（400万ユーザー等）は最新の公式情報を必ず確認してから引用すること</li>
       </ul>
+    </div>
+  </section>
+
+  <!-- 9 プロンプト集 -->
+  <section id="s9">
+    <div class="sec-h"><div class="no">9</div><h2>コピペで使えるプロンプト集</h2></div>
+    <p class="body">公式PDFの設計思想を今日から実践するための<span class="hl">4つのテンプレート</span>。そのままコピーして使える。</p>
+
+    <div class="ptitle">① Durable threads 開始</div>
+    <div class="prompt-box"><pre>このスレッドを[プロジェクト名]専用のDurable threadとして使います。
+以下を最初に読み込んでください：
+- workstream.md（現在のタスクと優先順位）
+- memory/project-state.md（背景・決定済み事項）
+- done-definition.md（完了条件と人間承認が必要な判断）
+
+以降、このスレッドで[プロジェクト名]の指示を出します。
+セッションをまたいでもこれらのファイルを参照して文脈を引き継いでください。</pre></div>
+
+    <div class="ptitle">② Goals 強いゴール定義</div>
+    <div class="prompt-box"><pre>ゴール：[何をするか、1文で]
+
+完了条件：[「〇〇の状態になったら終わり」を具体的に]
+制約：[〜はしない / 〜の範囲内でやる / 使っていいツール]
+検証基準：[成果物が正しいかをどう判定するか]
+
+エスカレーション条件（実行前に確認してください）：
+- メール・メッセージの送信
+- 外部サービスへの公開・投稿
+- ファイルの削除・上書き</pre></div>
+
+    <div class="ptitle">③ Thread automations（30分ごと監視）</div>
+    <div class="prompt-box"><pre>このスレッドを30分ごとに自動実行してください。
+
+毎回の手順：
+1. [監視対象: Slack / Gmail / 特定URL] を確認する
+2. 前回確認時から新着・変化があれば要約する
+3. 対応が必要なものに「要確認」フラグを立てる
+4. 週次サマリー（毎週月曜9時）：先週分をまとめてファイルに保存
+
+以下は私の承認なしに実行しない：送信・公開・削除・変更</pre></div>
+
+    <div class="secsub">④ 3ファイルテンプレート（スレッド開始時に作る）</div>
+    <div class="tpl-grid">
+      <div class="tpl-card">
+        <div class="tk">workstream.md</div>
+        <pre># Workstream: [プロジェクト名]
+更新日: YYYY-MM-DD
+
+## 今週のタスク
+- [ ] タスク1（期限：）
+- [ ] タスク2（期限：）
+
+## 優先順位
+1. 最優先
+2. 次点
+
+## 進行中
+- タスク名（次のステップ：）
+
+## 完了済み
+- タスク名（完了日：）</pre>
+      </div>
+      <div class="tpl-card">
+        <div class="tk">memory/project-state.md</div>
+        <pre># プロジェクト背景
+
+## 目的
+このプロジェクトが目指すこと
+
+## 決定済み事項
+- 決定1（理由：）
+- 決定2（理由：）
+
+## やらないこと
+- NG事項1
+- NG事項2
+
+## 用語
+- [用語]: [定義]
+
+## 関係者
+- [名前]: [役割]</pre>
+      </div>
+      <div class="tpl-card">
+        <div class="tk">done-definition.md</div>
+        <pre># 完了の定義
+
+## 「完了」とは
+どういう状態になれば終わりか
+
+## Codexが単独で進めていいこと
+- 情報収集・調査
+- 下書き・草案の作成
+- ファイルの整理・分類
+
+## 人間の承認が必要なこと
+- 送信・返信
+- 外部への公開・投稿
+- 削除・上書き
+
+## 迷ったら
+実行せず選択肢を提示して確認</pre>
+      </div>
     </div>
   </section>
 
