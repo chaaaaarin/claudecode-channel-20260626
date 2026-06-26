@@ -83,7 +83,7 @@ OpenAI Codex担当者のJason Liuが著した公式PDF「Codex-maxxing for long-
 
 Durable Threadsを開くだけでは不十分で、スレッドに「置く情報」を設計することが重要だ。
 
-🔶（出典：@kawai_design）
+✅（出典：OpenAI公式PDF）
 - **`workstream.md`** — 現在のタスク・優先順位・進行状況のサマリー
 - **`memory/project-state.md`** — プロジェクトの背景情報・決定済み事項・避けるべきこと
 - **`done-definition.md`** — 完了条件の定義。「いつ終わったとみなすか」を事前に書く
@@ -289,13 +289,15 @@ Goals（Chapter 9）はループ設計において最も重要な章だ。ゴー
 
 ---
 
-### 400万ユーザーと50%超の非コーディング利用
+### 500万ユーザーと知識労働者への急速な普及
 
-🔶（出典：Codex公式ブログ、2026年5月時点）
-- **週間アクティブユーザー：400万人超**
-- **コーディング以外のユースケースが50%超**に到達
+✅（出典：OpenAI公式ホワイトペーパー「The Next Era of Knowledge Work」2026年6月）
+- **週間アクティブユーザー：500万人超**（デスクトップアプリリリース以来6倍以上に増加）
+- **ナレッジワーカーがユーザーの約20%**を占め、開発者より3倍以上速いペースで採用
+- **約50%のユーザーが複数タスクを並行実行**——一人でチーム規模の成果が出せる段階へ
+- データ分析の週次成長率110%、ナレッジ成果物・研究タスクも30〜40%成長
 
-50%超という数字は、Codexの製品ポジションが「コーディングツール」から「知的仕事全般の代行者」に変化したことを示している。実際に公式PDFが対象とする用途は、コードを一切含まない業務（顧客対応・レポート作成・情報収集・フィードバック監視など）だ。
+この数字は、Codexの製品ポジションが「コーディングツール」から「知的仕事全般の代行者」に変化したことを示している。実際に公式ホワイトペーパーが対象とする用途は、コードを一切含まない業務（顧客対応・レポート作成・情報収集・フィードバック監視など）だ。
 
 🔶（出典：@kawai_design）
 - 長期スレッド向きの実例として挙げられているタスクの多くはコーディング以外：
@@ -320,7 +322,7 @@ Goals（Chapter 9）はループ設計において最も重要な章だ。ゴー
 
 太字の「送信する」「公開する」がここでのポイントだ。返金対応ループ・フィードバック監視ループ・Chief of Staffループのいずれも、「最後のアクション」は人間が行う設計になっている。Codexは「準備が完了したので確認してください」とエスカレーションし、人間がGoボタンを押す。
 
-🔶（出典：@kawai_design）
+✅（出典：OpenAI公式PDF）
 - この役割分担は`done-definition.md`に明示的に書いておくことが推奨されている
 - 「Codexが完了を宣言する前に何をすべきか」「どの判断だけを自分がする」を事前定義しておくと自律実行の精度が上がる
 
@@ -469,8 +471,8 @@ Goals（Chapter 9）はループ設計において最も重要な章だ。ゴー
 
 | 項目 | 状況 |
 |------|------|
-| 週間アクティブユーザー400万人の原文 | 🔶 Codex公式ブログからの引用とされているが原文URLの特定が必要 |
-| 50%超の非コーディング利用の計測基準 | 🔶 「コーディング以外」の定義・計測期間が公式ブログで詳細不明 |
+| 週間アクティブユーザー500万人・ナレッジワーカー20%等の数値 | ✅ OpenAI公式ホワイトペーパー「The Next Era of Knowledge Work」2026年6月に記載 |
+| 50%超の非コーディング利用の計測基準 | 🔶 「コーディング以外」の定義・計測期間が公式資料で詳細不明 |
 | Thread automationsの一般提供状況 | 🔶 公式PDFに記載あるが、実際の提供タイミングは確認が必要 |
 | /goalコマンドの現時点での提供状況 | ⚠️ @taiyo_ai_gakuse の分析では言及されているが公式確認未取得 |
 | Loop Engineeringの「新規性」 | ⚠️ Anthropicが2024年12月に文書化済みのevaluator-optimizerパターンの延長とされており、完全に新しい概念ではない可能性が高い |
@@ -483,6 +485,7 @@ Goals（Chapter 9）はループ設計において最も重要な章だ。ゴー
 
 - OpenAI公式 Codex-maxxing PDF（Jason Liu）: https://cdn.openai.com/pdf/8a9f00cf-d379-4e20-b06f-dd7ba5196a11/OAI_WhitePaper_Codex-maxxing26.pdf
 - OpenAI公式ページ: https://openai.com/index/codex-maxxing-long-running-work/
+- OpenAI公式ホワイトペーパー「The Next Era of Knowledge Work」: https://openai.com/ja-JP/index/codex-for-knowledge-work/
 - YouTube解説（まさおAIじっくり解説ch）: https://youtu.be/EJ-NSOLKUkw?si=iOpB6g26A7IFf_Tq
 - @kawai_design Xスレッド: https://x.com/kawai_design/status/2069933062276948232
 - @taiyo_ai_gakuse Xスレッド: https://x.com/taiyo_ai_gakuse/status/2064329757328830627
