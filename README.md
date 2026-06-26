@@ -16,8 +16,7 @@
 
 ## 目次
 
-1. [1次情報ソース](#1次情報ソース)
-2. [第1章 「仕事の置き場所」というパラダイムシフト](#第1章-仕事の置き場所というパラダイムシフト)
+1. [第1章 「仕事の置き場所」というパラダイムシフト](#第1章-仕事の置き場所というパラダイムシフト)
    - [Durable Threads——コンテキストを失わずに再開する](#durable-threadsコンテキストを失わずに再開する)
    - [最初に作る3ファイル](#最初に作る3ファイル)
 3. [第2章 10機能の実装詳解](#第2章-10機能の実装詳解)
@@ -42,19 +41,6 @@
    - [Codexがやること / 人間がやること](#codexがやること--人間がやること)
 7. [未確認・注意事項](#未確認注意事項)
 8. [出典リスト](#出典リスト)
-
----
-
-## 1次情報ソース
-
-| 確度 | ソース | URL | 要約 |
-|------|--------|-----|------|
-| ✅ | OpenAI公式 Codex-maxxing PDF（Jason Liu著、27p） | https://cdn.openai.com/pdf/8a9f00cf-d379-4e20-b06f-dd7ba5196a11/OAI_WhitePaper_Codex-maxxing26.pdf | 10章構成。Durable threads・Voice・Steering・Memory・Computer use・Remote control・Thread automations・Three loops・Goals・Side panelを詳解 |
-| ✅ | OpenAI公式ページ | https://openai.com/index/codex-maxxing-long-running-work/ | PDF公開アナウンスページ |
-| ✅ | YouTube解説（まさおAIじっくり解説ch） | https://youtu.be/EJ-NSOLKUkw?si=iOpB6g26A7IFf_Tq | 公式PDFを日本語で全章解説 |
-| 🔶 | @kawai_design Xスレッド | https://x.com/kawai_design/status/2069933062276948232 | 「Codex公式ガイド完全解説〜長時間タスクを任せる10の型〜」10章構成 |
-| 🔶 | @taiyo_ai_gakuse Xスレッド | https://x.com/taiyo_ai_gakuse/status/2064329757328830627 | Loop Engineering概念の分析。ループ成立の4条件と系譜 |
-| 🔶 | @AnatoliKopadze Xポスト（182万ビュー） | https://x.com/AnatoliKopadze/status/2068690663919530207 | Anthropicエンジニアの3エージェントビルドを40分で実演 |
 
 ---
 
